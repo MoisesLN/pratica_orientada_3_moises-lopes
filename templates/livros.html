@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Livros cadastrados{% endblock %}
+
+{% block content %}
+    <h1>Livros</h1>
+    {% if livros %}
+        <ul>
+            {% for livro in livros %}
+                <li>{{ livro.titulo }} — Usuário: {{ livro.user.nome }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não há livros cadastrados.</p>
+    {% endif %}
+{% endblock %}
